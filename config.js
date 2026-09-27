@@ -90,7 +90,7 @@ const QUIZ_QUESTIONS = [
       { text: "補眠補到下午" }
     ],
     myAnswerText: "一半出門、一半耍廢",
-    myAnswerNote: "出門是充電，在家耍廢也是充電，兩種都需要～"
+    myAnswerNote: "出門是充電，在家耍廢也是充電，兩種都需要～\n不過週日基本上不出門，因為需要躺在家一整天備戰 Blue Monday ʕథ౪థʔ"
   },
   {
     id: "q5",
@@ -219,7 +219,7 @@ const QUIZ_QUESTIONS = [
       { text: "我沒有很關心政治" }
     ],
     myAnswerText: "民進黨",
-    myAnswerNote: "因為我在意國家主權"
+    myAnswerNote: "因為我在意國家主權，也很關注性別議題，所以這是綜合下來的選擇～"
   },
   {
     id: "q14",
