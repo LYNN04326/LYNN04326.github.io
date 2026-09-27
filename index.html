@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequency Match ｜ 徵友互動</title>
+
+  <!-- Tailwind CSS & Lucide Icons & Canvas Confetti -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- 引入自訂樣式 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- 頂部深藍導覽列 -->
+  <header class="sticky top-0 z-30 bg-slate-900 border-b border-slate-800 text-white shadow-sm">
+    <div class="max-w-xl mx-auto px-4 h-14 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </div>
+        <span class="font-bold tracking-tight text-sm sm:text-base" id="header-title">Frequency Match</span>
+      </div>
+      <div class="text-xs text-slate-400 font-mono" id="header-status">自介探索</div>
+    </div>
+  </header>
+
+  <!-- 主內容容器 -->
+  <main class="flex-1 max-w-xl w-full mx-auto px-4 py-8">
+
+    <!-- 1. 純自我介紹頁 -->
+    <div id="page-intro" class="space-y-6 animate-step">
+      <section class="ui-card p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+          <img id="intro-avatar" src="" alt="Avatar"
+            class="w-24 h-24 rounded-2xl object-cover border-2 border-slate-100 shadow-md shrink-0">
+
+          <div class="flex-1 text-center sm:text-left space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h1 class="text-2xl font-extrabold tracking-tight text-slate-900" id="intro-name"></h1>
+              <div class="flex items-center justify-center gap-1.5 text-xs">
+                <span class="bg-blue-50 text-blue-800 font-bold px-2 py-0.5 rounded border border-blue-200"
+                  id="intro-mbti"></span>
+                <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200"
+                  id="intro-location"></span>
+              </div>
+            </div>
+
+            <p class="text-slate-600 text-sm leading-relaxed" id="intro-bio"></p>
+            <div class="flex flex-wrap gap-1.5 pt-1 justify-center sm:justify-start" id="intro-tags"></div>
+          </div>
+        </div>
+
+        <div class="pt-5 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="sm:col-span-2 bg-blue-50/70 p-3.5 rounded-xl border border-blue-100">
+            <span class="text-blue-900 font-bold block mb-1">🌟 希望你也是</span>
+            <span class="text-blue-800 leading-relaxed" id="intro-good"></span>
+          </div>
+          <div class="sm:col-span-1 bg-rose-50/60 p-3.5 rounded-xl border border-rose-100">
+            <span class="text-rose-900 font-bold block mb-1">⚠️ 先不要</span>
+            <span class="text-rose-800 leading-relaxed" id="intro-bad"></span>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button onclick="startQuiz()"
+            class="w-full py-3.5 px-4 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm sm:text-base rounded-xl transition shadow-md flex items-center justify-center gap-2">
+            <span id="start-btn-text">開始互動</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- 2. 題目選項作答頁 -->
+    <div id="page-question" class="hidden space-y-6 animate-step">
+      <section class="ui-card p-6 sm:p-7 space-y-6">
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between text-xs font-semibold">
+            <span class="text-blue-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+              <span id="q-counter"></span>
+            </span>
+            <span class="text-slate-400 font-mono" id="q-category">日常習慣</span>
+          </div>
+          <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+            <div id="q-progress-bar" class="bg-blue-600 h-full w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <h2 class="text-base sm:text-lg font-bold text-slate-900 leading-snug" id="q-title"></h2>
+          <p class="text-xs text-slate-500" id="q-desc"></p>
+        </div>
+
+        <div id="q-options" class="space-y-2.5"></div>
+      </section>
+    </div>
+
+    <!-- 3. 我的答案揭曉頁 -->
+    <div id="page-reveal" class="hidden space-y-6 animate-step">
+      <section class="ui-card p-6 sm:p-7 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800" id="reveal-q-badge">Q1
+            解鎖</span>
+          <span class="text-xs text-slate-400">關於這題</span>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="text-[11px] font-bold text-slate-500">你的選擇：</div>
+          <div class="text-sm font-semibold text-slate-800" id="user-choice-text"></div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-blue-50/80 border border-blue-200 space-y-2.5">
+          <div class="flex items-center gap-2">
+            <span class="shrink-0 whitespace-nowrap self-start px-2.5 py-1 rounded-md bg-blue-600 text-white text-[11px] font-bold">問的原因</span>
+            <span class="text-sm font-extrabold text-blue-950" id="my-choice-text"></span>
+          </div>
+          <p class="text-xs text-slate-700 leading-relaxed bg-white/90 p-3 rounded-lg border border-blue-100"
+            id="my-choice-note"></p>
+        </div>
+
+        <div class="pt-2">
+          <button onclick="handleNextClick()"
+            class="w-full py-3.5 px-4 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm rounded-xl transition shadow flex items-center justify-center gap-2">
+            <span id="next-step-btn-text">下一題</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4. 作答完畢聯絡卡 -->
+    <div id="page-contact" class="hidden space-y-6 animate-step">
+      <section class="ui-card p-6 sm:p-7 space-y-5">
+        <div class="text-center space-y-1">
+          <div
+            class="w-12 h-12 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center mx-auto mb-2 border border-blue-200">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900" id="contact-title">全部完成 🎆</h2>
+          <p class="text-xs text-slate-500">留下稱呼與聯絡方式，並送出回答！</p>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">任何你覺得可以的名字 <span
+                class="text-rose-500">*</span></label>
+            <input type="text" id="resp-name" placeholder="例如：Jamie、Peter"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">任何你等等會用這個傳自介給我的帳號(小帳大帳都可以) <span
+                class="text-rose-500">*</span></label>
+            <input type="text" id="resp-contact" placeholder="@instagram_id 或 @thread_id"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">看你想講什麼，哪些題目很問號之類ㄉ（選填）</label>
+            <input type="text" id="resp-note" placeholder="請輸入你的看法！"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
+          </div>
+        </div>
+
+        <button onclick="submitFinalAnswers()"
+          class="w-full py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>傳送結果</span>
+        </button>
+      </section>
+    </div>
+
+    <!-- 5. 結算與破冰卡 -->
+    <div id="page-result" class="hidden space-y-6 animate-step">
+      <section class="ui-card p-6 sm:p-7 text-center space-y-5 border-2 border-blue-600/30">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 border border-blue-200 text-blue-600 mx-auto">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-slate-900">完成！</h3>
+          <p class="text-xs text-slate-500 mt-1" id="submit-feedback">資料已準備就緒。</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 space-y-2.5">
+          <div class="text-xs text-slate-600 font-semibold">專屬訊息卡 (可複製直接私訊給我，讓我能找到你的回覆！)：</div>
+          <div class="text-xs text-slate-600 font-semibold">記得補上你的自我介紹、或是你想分享的事情，再傳送給我！</div>
+          <p class="text-xs text-slate-800 font-mono bg-white p-3 rounded-lg border border-slate-200 leading-relaxed"
+            id="icebreaker-msg"></p>
+          <button onclick="copyIcebreakerMessage()"
+            class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition flex items-center justify-center gap-1.5">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copy-btn-label">一鍵複製我是誰</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- 依序載入設定與應用邏輯 -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
