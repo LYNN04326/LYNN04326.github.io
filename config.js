@@ -18,7 +18,7 @@ const MY_PROFILE = {
   avatar: "./avatar.svg",
   bio: "我不太會寫自介，每次寫都像在寫履歷。\n所以做了這個小測驗，你點點選項就好，還可以順便偷看我的答案。\n越後面的題目會越認真，請做好心理準備（x）",
   goodPoints: "情緒穩定，有事會說出來，不冷戰也不突然消失\n專一，會主動分享生活，讓我不用猜自己有沒有被愛\n尊重彼此的想法和界線，一起做決定\n工作穩定，能把自己的生活照顧好",
-  badPoints: "搞曖昧，同時跟很多人聊\n吵架就冷處理或消失\n想控制對方、查手機\n大男人主義、貶低女性\n媽寶",
+  badPoints: "搞曖昧，同時跟很多人聊\n吵架就冷處理或消失\n想控制對方、查手機\n大男人主義、貶低女性\n媽寶\n支持國民黨或民眾黨",
   tags: ["22歲", "Podcast 重度使用者", "陷入美國影集"]
 };
 
@@ -124,6 +124,20 @@ const QUIZ_QUESTIONS = [
   },
   {
     id: "q7",
+    category: "個性",
+    title: "你是 I 人還是 E 人？",
+    desc: "不信 MBTI 也可以選",
+    options: [
+      { text: "I 人，需要自己的時間充電" },
+      { text: "E 人，跟人相處就是充電" },
+      { text: "看場合切換" },
+      { text: "不信這個" }
+    ],
+    myAnswerText: "E 人（ENFP）",
+    myAnswerNote: "話很多，但也很喜歡聽別人說話，聊到喜歡的話題會停不下來。"
+  },
+  {
+    id: "q8",
     category: "小秘密",
     title: "你身上通常是什麼味道？",
     desc: "",
@@ -137,102 +151,89 @@ const QUIZ_QUESTIONS = [
     myAnswerNote: "乾淨的味道真的會加分，這是我的秘密條件之一（x）"
   },
   {
-    id: "q8",
-    category: "情緒溝通",
-    title: "意見不合的時候，你通常會？",
+    id: "q9",
+    category: "分享習慣",
+    title: "看到好笑的迷因或影片，你會？",
+    desc: "",
+    options: [
+      { text: "馬上傳給想分享的人" },
+      { text: "自己笑完就好" },
+      { text: "存起來之後再看" },
+      { text: "轉發到限動" }
+    ],
+    myAnswerText: "馬上傳給想分享的人",
+    myAnswerNote: "好笑的東西一個人笑太可惜了！分享生活的大小事對我來說很重要。"
+  },
+  {
+    id: "q10",
+    category: "情緒",
+    title: "心情不好的時候，你通常會？",
+    desc: "",
+    options: [
+      { text: "找人聊聊" },
+      { text: "自己消化" },
+      { text: "運動或睡一覺" },
+      { text: "吃好吃的" }
+    ],
+    myAnswerText: "找人聊聊",
+    myAnswerNote: "我是會想說出來的類型，說完就好一大半。反過來也一樣，很願意當你的樹洞。"
+  },
+  {
+    id: "q11",
+    category: "溝通",
+    title: "跟別人意見不合的時候，你通常會？",
     desc: "",
     options: [
       { text: "當下說清楚" },
       { text: "先冷靜一下再回來談" },
       { text: "不想講就先不講" },
-      { text: "其他" }
+      { text: "其他(願意的話可以跟我說)" }
     ],
     myAnswerText: "可以先冷靜，但一定要回來談",
-    myAnswerNote: "我最怕冷戰和突然疏遠。需要時間可以，說一聲「我想一下，晚點聊」就好。"
-  },
-  {
-    id: "q9",
-    category: "聯絡頻率",
-    title: "交往之後，你習慣多常聯絡？",
-    desc: "",
-    options: [
-      { text: "整天都會分享" },
-      { text: "一天聊幾次" },
-      { text: "睡前聊一下就好" },
-      { text: "有事再說" }
-    ],
-    myAnswerText: "想每天分享生活",
-    myAnswerNote: "先自首，我是有點黏人的類型，喜歡知道你今天吃了什麼、遇到什麼事。不用秒回，但希望你也會想跟我分享。"
-  },
-  {
-    id: "q10",
-    category: "約會",
-    title: "約會通常誰安排？",
-    desc: "",
-    options: [
-      { text: "我會主動安排" },
-      { text: "輪流" },
-      { text: "看誰有空" },
-      { text: "對方安排我就去" }
-    ],
-    myAnswerText: "希望你也會主動安排",
-    myAnswerNote: "被放在心上的感覺，常常是從「他記得我說過想去那裡」開始的。"
-  },
-  {
-    id: "q11",
-    category: "約會",
-    title: "約會的花費，你覺得怎麼分比較好？",
-    desc: "",
-    options: [
-      { text: "我來付" },
-      { text: "輪流請" },
-      { text: "AA 制" },
-      { text: "看情況" }
-    ],
-    myAnswerText: "看情況，不要太計較",
-    myAnswerNote: "我在意的不是誰付多少，而是兩個人都願意付出，不亂花錢也不斤斤計較。"
+    myAnswerNote: "最怕冷戰跟突然疏遠。需要時間可以，說一聲「我想一下，晚點聊」就好。"
   },
   {
     id: "q12",
-    category: "信任",
-    title: "伴侶想看你的手機，你會？",
+    category: "金錢觀",
+    title: "跟朋友出去吃飯，你習慣？",
     desc: "",
     options: [
-      { text: "隨便看" },
-      { text: "不太喜歡但會給" },
-      { text: "不行，這是隱私" },
-      { text: "其他" }
+      { text: "各付各的" },
+      { text: "輪流請" },
+      { text: "我來請" },
+      { text: "看情況" }
     ],
-    myAnswerText: "我不會查你的手機",
-    myAnswerNote: "信任是互相的。我不查你的手機，也希望你不要做讓我不安的事。"
+    myAnswerText: "看情況，不要太計較",
+    myAnswerNote: "在意的不是誰付多少，而是彼此都願意付出。不亂花錢，也不斤斤計較。"
   },
   {
     id: "q13",
-    category: "價值觀",
-    title: "你怎麼看台灣？",
-    desc: "",
+    category: "政治傾向",
+    title: "請 pick 你的政治傾向",
+    desc: "放在第 13 題剛剛好",
     options: [
       { text: "台灣就是台灣" },
-      { text: "兩岸一家親" },
-      { text: "沒想過這個問題" },
-      { text: "不想談政治" }
+      { text: "國民黨" },
+      { text: "民進黨" },
+      { text: "民眾黨" },
+      { text: "我沒有很關心政治" }
     ],
     myAnswerText: "台灣就是台灣",
-    myAnswerNote: "立場不用一模一樣，但核心價值要相近。這題對我來說蠻重要的。"
+    myAnswerNote: "立場不用一模一樣，但核心價值要相近，這題對我來說蠻重要的。"
   },
   {
     id: "q14",
     category: "價值觀",
-    title: "你怎麼看男女平等？",
-    desc: "",
+    title: "你怎麼看性別平等？",
+    desc: "沒有想過也很正常！",
     options: [
       { text: "認同，也會做到" },
       { text: "認同，但有些事還是男生該做" },
       { text: "覺得現在女生比較吃香" },
       { text: "沒想過" }
     ],
-    myAnswerText: "希望是平等的夥伴",
-    myAnswerNote: "不需要你讓我，也不需要你管我，我們一起做決定就好。"
+    myAnswerText: "希望大家都是平等的",
+    myAnswerNote: "不需要誰讓誰，也不需要誰管誰，一起討論、一起做決定就好。"
   },
   {
     id: "q15",
@@ -246,20 +247,20 @@ const QUIZ_QUESTIONS = [
       { text: "問這個很膚淺ㄟ" }
     ],
     myAnswerText: "175 以上是加分題（x）",
-    myAnswerNote: "老實說我喜歡高高的、乾淨清爽、韓系短髮的類型……但如果你會比任何人都更愛我，這題可以不算分。"
+    myAnswerNote: "老實說我喜歡高高的、乾淨清爽、韓系短髮的類型……但聊得來比什麼都重要，這題可以不算分。"
   },
   {
     id: "q16",
     category: "最後一題",
-    title: "最後認真問：你現在想找的是？",
+    title: "你是怎麼點進來的？",
     desc: "",
     options: [
-      { text: "認真交往" },
-      { text: "先當朋友慢慢認識" },
-      { text: "隨緣" },
-      { text: "還沒想清楚" }
+      { text: "想認識新朋友" },
+      { text: "想找對象" },
+      { text: "好奇點進來看看" },
+      { text: "被朋友推坑" }
     ],
-    myAnswerText: "想談長久的感情",
-    myAnswerNote: "不是一見面就要結婚啦，只是希望我們方向一樣，不浪費彼此的時間。"
+    myAnswerText: "先聊得來最重要",
+    myAnswerNote: "不急著決定什麼，先從認識開始。如果真的很合拍，我是會認真走下去的那種人。"
   }
 ];
