@@ -16,7 +16,7 @@ const MY_PROFILE = {
   mbti: "ENFP",
   location: "台北",
   avatar: "./avatar.svg",
-  bio: "我不太會寫自介，每次寫都像在寫履歷～\n所以做了這個小測驗，你點點選項就好，還可以順便偷看我的答案～\n越後面的題目會越認真，請做好心理準備（x）",
+  bio: "我不太會寫自介，每次寫都像在寫履歷～\n所以做了這個小測驗，點點選項、順便偷看我的答案，輕鬆回答就好～\n就當作是小小的了解彼此與交流૮(˶ᵔ ᵕ ᵔ˶)ა",
   goodPoints: "情緒穩定，有事會說出來，不冷戰也不突然消失\n尊重彼此的想法和界線，一起做決定\n工作穩定，能把自己的生活照顧好",
   badPoints: "習慣使用髒話\n愛聽抖音歌或愛看抖音\n支持國民黨或民眾黨",
   tags: ["女", "22歲", "異性戀", "菜鳥社畜"],
@@ -38,7 +38,7 @@ const QUIZ_QUESTIONS = [
     id: "q1",
     category: "飲料甜度",
     title: "手搖飲你都點幾分糖？",
-    desc: "",
+    desc: "先來個簡單的暖身題",
     options: [
       { text: "無糖" },
       { text: "一分糖" },
@@ -46,14 +46,14 @@ const QUIZ_QUESTIONS = [
       { text: "半糖" },
       { text: "全糖，人生才會甜" }
     ],
-    myAnswerText: "一分糖",
+    myAnswerText: "一分糖派報到！",
     myAnswerNote: "一分糖最剛好！不管是果汁加茶還是鮮奶茶，都不會甜到膩，又剛好能壓住茶的澀感～"
   },
   {
     id: "q2",
     category: "音樂喜好",
     title: "你平常都聽什麼類型的音樂？",
-    desc: "",
+    desc: "（其實是想偷看你的歌單）",
     options: [
       { text: "獨立音樂" },
       { text: "流行樂" },
@@ -61,42 +61,42 @@ const QUIZ_QUESTIONS = [
       { text: "搖滾" },
       { text: "什麼都聽" }
     ],
-    myAnswerText: "獨立音樂",
+    myAnswerText: "獨立音樂派～",
     myAnswerNote: "從小對流行歌手就比較無感，長大後才發現，我就是聽獨立音樂的料，哈"
   },
   {
     id: "q3",
     category: "通勤日常",
     title: "通勤的時候你都在聽什麼？",
-    desc: "",
+    desc: "通勤也是很重要的充電時間！",
     options: [
       { text: "音樂" },
       { text: "Podcast" },
       { text: "看影片" },
       { text: "什麼都不聽，放空" }
     ],
-    myAnswerText: "Podcast",
+    myAnswerText: "Podcast 重度使用者",
     myAnswerNote: "聽有趣的內容可以暖機我的腦袋😇"
   },
   {
     id: "q4",
     category: "影集喜好",
     title: "你比較喜歡哪種類型的影集？",
-    desc: "",
+    desc: "有好看的歡迎推坑（x）",
     options: [
       { text: "肥皂劇" },
       { text: "喜劇" },
       { text: "科幻" },
       { text: "動作" }
     ],
-    myAnswerText: "喜劇跟動作都愛",
+    myAnswerText: "喜劇跟動作都愛！",
     myAnswerNote: "曾經有一段時間沉迷於 Friends 跟良善之地～\n因為喜歡團隊合作的感覺，最近迷上軍警、警探類：正在看 SEAL Team～"
   },
   {
     id: "q5",
     category: "政治傾向",
     title: "請 pick 你的政治傾向",
-    desc: "",
+    desc: "突然認真起來（x）",
     options: [
       { text: "國民黨" },
       { text: "民進黨" },
@@ -110,7 +110,7 @@ const QUIZ_QUESTIONS = [
     id: "q6",
     category: "週末",
     title: "週末你比較常？",
-    desc: "",
+    desc: "週末是用來充電的",
     options: [
       { text: "在家耍廢" },
       { text: "出門探索新地方" },
@@ -125,7 +125,7 @@ const QUIZ_QUESTIONS = [
     id: "q7",
     category: "香味",
     title: "你喜歡哪種香水味？",
-    desc: "",
+    desc: "香味也是第一印象的一部分",
     options: [
       { text: "花果香" },
       { text: "木質調" },
@@ -133,28 +133,28 @@ const QUIZ_QUESTIONS = [
       { text: "乾淨的皂感" },
       { text: "我不噴香水" }
     ],
-    myAnswerText: "花果香",
-    myAnswerNote: "我是香水控！根據天氣跟心情會有不同選擇～\n尤其喜歡玫瑰🌹幾乎每瓶香水都帶點玫瑰，今年給自己買的生日禮物也是香水 哈哈哈"
+    myAnswerText: "花果香，尤其是玫瑰🌹",
+    myAnswerNote: "我是香水控！根據天氣跟心情會有不同選擇～\n幾乎每瓶香水都帶點玫瑰，今年給自己買的生日禮物也是香水 哈哈哈"
   },
   {
     id: "q8",
     category: "情緒",
     title: "心情不好的時候，你通常會？",
-    desc: "",
+    desc: "這題沒有標準答案啦",
     options: [
       { text: "找人聊聊" },
       { text: "自己消化" },
       { text: "運動或睡一覺" },
       { text: "吃好吃的" }
     ],
-    myAnswerText: "找人聊聊",
+    myAnswerText: "一定要找人聊聊",
     myAnswerNote: "我是會想說出來的類型，說完就好一大半，而且需要感受到朋友的理解或安慰哈哈哈"
   },
   {
     id: "q9",
     category: "旅行",
     title: "如果能馬上出發，你最想去哪？",
-    desc: "",
+    desc: "說走就走的那種",
     options: [
       { text: "日本" },
       { text: "濟州島" },
@@ -162,70 +162,70 @@ const QUIZ_QUESTIONS = [
       { text: "歐洲" },
       { text: "其他（可以跟我說！）" }
     ],
-    myAnswerText: "濟州島",
+    myAnswerText: "濟州島！",
     myAnswerNote: "目前去過最喜歡的地方！那邊的步調很慢很放鬆，一眼望出去都是海，東西也好吃～"
   },
   {
     id: "q10",
     category: "咖啡廳",
     title: "你喜歡去咖啡廳嗎？",
-    desc: "",
+    desc: "咖啡因愛好者請舉手（x）",
     options: [
       { text: "超喜歡，會特地找" },
       { text: "偶爾，有需要才去" },
       { text: "比較喜歡待在家" },
       { text: "咖啡廳是拿來工作的地方" }
     ],
-    myAnswerText: "超喜歡，會特地找",
+    myAnswerText: "會特地找！",
     myAnswerNote: "也想聽聽你的愛店～有推薦的話一定要跟我說！"
   },
   {
     id: "q11",
     category: "朋友相處",
     title: "跟朋友在一起的時候，你通常是？",
-    desc: "",
+    desc: "每個朋友圈都有不同角色",
     options: [
       { text: "負責炒熱氣氛的人" },
       { text: "安靜聽大家說話的人" },
       { text: "負責揪團的人" },
       { text: "看場合切換" }
     ],
-    myAnswerText: "負責揪團的人",
+    myAnswerText: "揪團仔就是我",
     myAnswerNote: "我的朋友們都不太主動 哈 所以我每次揪團還會附贈挑餐廳服務( っ ⸝⸝⸝◜~◝⸝⸝⸝ c)"
   },
   {
     id: "q12",
     category: "溝通",
     title: "跟別人意見不合的時候，你通常會？",
-    desc: "",
+    desc: "寫這題的時候有認真想很久",
     options: [
       { text: "當下說清楚" },
       { text: "先冷靜一下再回來談" },
       { text: "不想講就先不講" },
       { text: "其他（願意的話可以跟我說）" }
     ],
-    myAnswerText: "先冷靜一下再回來談",
+    myAnswerText: "冷靜一下，但一定會回來談",
     myAnswerNote: "我可以等你冷靜，但不要冷戰或直接消失啦，講開就沒事了"
   },
   {
     id: "q13",
     category: "分享習慣",
     title: "看到好笑的迷因或影片，你會？",
-    desc: "",
+    desc: "網路時代的社交禮儀（x）",
     options: [
       { text: "馬上傳給想分享的人" },
       { text: "自己笑完就好" },
       { text: "存起來之後再看" },
       { text: "轉發到限動" }
     ],
-    myAnswerText: "馬上傳給想分享的人",
+    myAnswerText: "馬上傳出去！",
     myAnswerNote: "好笑的東西一個人笑太可惜了！分享生活的大小事對我來說很重要～"
   },
   {
     id: "q14",
     category: "價值觀",
     title: "你對女性困境有了解嗎？",
-    desc: "",
+    desc: "這題有點認真",
     options: [
       { text: "有稍微了解" },
       { text: "不了解" },
@@ -239,21 +239,21 @@ const QUIZ_QUESTIONS = [
     id: "q15",
     category: "金錢觀",
     title: "跟伴侶出去吃飯，你習慣？",
-    desc: "",
+    desc: "現實題來了",
     options: [
       { text: "各付各的" },
       { text: "輪流請" },
       { text: "我來請" },
       { text: "看情況" }
     ],
-    myAnswerText: "看情況",
+    myAnswerText: "看情況～",
     myAnswerNote: "在意的不是誰付多少，而是彼此都願意付出～不亂花錢，也不斤斤計較～"
   },
   {
     id: "q16",
     category: "加分題",
     title: "你的身高是？",
-    desc: "",
+    desc: "膚淺但誠實的一題（x）",
     options: [
       { text: "175 以下" },
       { text: "175～180" },
@@ -267,7 +267,7 @@ const QUIZ_QUESTIONS = [
     id: "q17",
     category: "最後一題",
     title: "你是怎麼點進來的？",
-    desc: "",
+    desc: "最後一題了！",
     options: [
       { text: "想認識新朋友" },
       { text: "想找對象" },
