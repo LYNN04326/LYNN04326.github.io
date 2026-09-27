@@ -144,25 +144,25 @@
             <i data-lucide="award" class="w-6 h-6"></i>
           </div>
           <h2 class="text-lg font-bold text-slate-900" id="contact-title">全部完成 🎆</h2>
-          <p class="text-xs text-slate-500">留下稱呼與聯絡方式，並送出回答！</p>
+          <p class="text-xs text-slate-500">最後留個名字和帳號，讓我知道你是誰！</p>
         </div>
 
         <div class="space-y-3 pt-2">
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">任何你覺得可以的名字 <span
+            <label class="block text-xs font-semibold text-slate-700 mb-1">怎麼稱呼你？ <span
                 class="text-rose-500">*</span></label>
-            <input type="text" id="resp-name" placeholder="例如：Jamie、Peter"
+            <input type="text" id="resp-name" placeholder="例如：小明、Peter"
               class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">任何你等等會用這個傳自介給我的帳號(小帳大帳都可以) <span
+            <label class="block text-xs font-semibold text-slate-700 mb-1">你等等會用哪個帳號私訊我？（小帳大帳都可以） <span
                 class="text-rose-500">*</span></label>
-            <input type="text" id="resp-contact" placeholder="@instagram_id 或 @thread_id"
+            <input type="text" id="resp-contact" placeholder="@instagram 或 @threads 帳號"
               class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">看你想講什麼，哪些題目很問號之類ㄉ（選填）</label>
-            <input type="text" id="resp-note" placeholder="請輸入你的看法！"
+            <label class="block text-xs font-semibold text-slate-700 mb-1">有什麼想說的？哪題很問號也可以吐槽（選填）</label>
+            <input type="text" id="resp-note" placeholder="想說什麼都可以！"
               class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white">
           </div>
         </div>
@@ -170,7 +170,7 @@
         <button onclick="submitFinalAnswers()"
           class="w-full py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow flex items-center justify-center gap-2">
           <i data-lucide="send" class="w-4 h-4"></i>
-          <span>傳送結果</span>
+          <span>完成，產生訊息</span>
         </button>
       </section>
     </div>
@@ -185,18 +185,19 @@
 
         <div>
           <h3 class="text-lg font-bold text-slate-900">完成！</h3>
-          <p class="text-xs text-slate-500 mt-1" id="submit-feedback">資料已準備就緒。</p>
+          <p class="text-xs text-slate-500 mt-1" id="submit-feedback">謝謝你做完！複製下面的訊息私訊我吧</p>
         </div>
 
         <div class="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 space-y-2.5">
-          <div class="text-xs text-slate-600 font-semibold">專屬訊息卡 (可複製直接私訊給我，讓我能找到你的回覆！)：</div>
-          <div class="text-xs text-slate-600 font-semibold">記得補上你的自我介紹、或是你想分享的事情，再傳送給我！</div>
-          <p class="text-xs text-slate-800 font-mono bg-white p-3 rounded-lg border border-slate-200 leading-relaxed"
+          <div class="text-xs text-slate-600 font-semibold">你的專屬訊息卡（複製後私訊給我，我才找得到你的回覆！）</div>
+          <div class="text-xs text-slate-600 font-semibold">記得補上一點你的自我介紹，或最近在迷的東西（影集、Podcast 都很歡迎推坑）再傳給我！</div>
+          <div class="hidden text-sm font-bold text-blue-800 bg-blue-50 border border-blue-200 rounded-lg px-3 py-2" id="my-contact-row">私訊我：<span id="my-contact"></span></div>
+          <p class="text-xs text-slate-800 font-mono bg-white p-3 rounded-lg border border-slate-200 leading-relaxed max-h-72 overflow-y-auto"
             id="icebreaker-msg"></p>
           <button onclick="copyIcebreakerMessage()"
             class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition flex items-center justify-center gap-1.5">
             <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            <span id="copy-btn-label">一鍵複製我是誰</span>
+            <span id="copy-btn-label">一鍵複製訊息</span>
           </button>
         </div>
       </section>

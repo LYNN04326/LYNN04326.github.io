@@ -171,7 +171,17 @@ async function submitFinalAnswers() {
   }
 
   // 破冰訊息
-  const iceText = `嗨！我剛剛做完了你的 ${total} 題認識對方的互動 ✨ 我是 ${name} (${contact})！`;
+  const answerLines = QUIZ_QUESTIONS.map((q, idx) => {
+    const a = recordedAnswers[q.id];
+    return `Q${idx + 1} ${q.title}\n→ ${a ? a.choice : ''}`;
+  }).join('\n');
+  let iceText = `嗨 ${MY_PROFILE.name}！我是 ${name}（${contact}），剛做完你的 ${total} 題小測驗 ✨\n\n我的答案：\n${answerLines}`;
+  if (note) iceText += `\n\n想說的話：${note}`;
+
+  if (MY_PROFILE.contact) {
+    document.getElementById('my-contact').innerText = MY_PROFILE.contact;
+    document.getElementById('my-contact-row').classList.remove('hidden');
+  }
   document.getElementById('icebreaker-msg').innerText = iceText;
 
   showPage('page-result');
@@ -184,6 +194,6 @@ function copyIcebreakerMessage() {
   navigator.clipboard.writeText(msg).then(() => {
     const label = document.getElementById('copy-btn-label');
     label.innerText = "已複製！直接去私訊";
-    setTimeout(() => { label.innerText = "一鍵複製我是誰"; }, 2500);
+    setTimeout(() => { label.innerText = "一鍵複製訊息"; }, 2500);
   });
 }
