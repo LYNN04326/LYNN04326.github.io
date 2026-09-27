@@ -52,18 +52,17 @@ const QUIZ_QUESTIONS = [
   {
     id: "q2",
     category: "音樂喜好",
-    title: "以下哪個樂團你最常聽？",
+    title: "你平常都聽什麼類型的音樂？",
     desc: "",
     options: [
-      { text: "南西肯恩" },
-      { text: "滅火器" },
-      { text: "血肉果汁機" },
-      { text: "溫蒂漫步" },
-      { text: "都喜歡，看心情選" },
-      { text: "其他（我想知道！）" }
+      { text: "獨立音樂" },
+      { text: "流行樂" },
+      { text: "嘻哈饒舌" },
+      { text: "搖滾" },
+      { text: "什麼都聽" }
     ],
-    myAnswerText: "都喜歡，看心情選",
-    myAnswerNote: "不同心情會選不同的歌～\n曾經有一陣子很低潮的時候，會戴耳機聽血肉果汁機做瑜珈😎\n從小對流行歌手就比較無感，長大後才發現，我就是聽獨立音樂的料，哈"
+    myAnswerText: "獨立音樂",
+    myAnswerNote: "從小對流行歌手就比較無感，長大後才發現，我就是聽獨立音樂的料，哈"
   },
   {
     id: "q3",
@@ -77,7 +76,7 @@ const QUIZ_QUESTIONS = [
       { text: "什麼都不聽，放空" }
     ],
     myAnswerText: "Podcast",
-    myAnswerNote: "最常聽呱吉的新資料夾～聽有趣的內容可以暖機我的腦袋😇"
+    myAnswerNote: "聽有趣的內容可以暖機我的腦袋😇"
   },
   {
     id: "q4",
@@ -91,7 +90,7 @@ const QUIZ_QUESTIONS = [
       { text: "動作" }
     ],
     myAnswerText: "喜劇跟動作都愛",
-    myAnswerNote: "曾經有一段時間沉迷於 Friends 跟良善之地～\n因為喜歡團隊合作的感覺，最近迷上軍警、警探類：正在看 SEAL Team，以前印象最深刻的是醉爆特攻隊～"
+    myAnswerNote: "曾經有一段時間沉迷於 Friends 跟良善之地～\n因為喜歡團隊合作的感覺，最近迷上軍警、警探類：正在看 SEAL Team～"
   },
   {
     id: "q5",
@@ -125,14 +124,14 @@ const QUIZ_QUESTIONS = [
   {
     id: "q7",
     category: "香味",
-    title: "你喜歡哪種香味？",
+    title: "你喜歡哪種香水味？",
     desc: "",
     options: [
       { text: "花果香" },
       { text: "木質調" },
       { text: "柑橘調" },
       { text: "乾淨的皂感" },
-      { text: "我不擦香水" }
+      { text: "我不噴香水" }
     ],
     myAnswerText: "花果香",
     myAnswerNote: "我是香水控！根據天氣跟心情會有不同選擇～\n尤其喜歡玫瑰🌹幾乎每瓶香水都帶點玫瑰，今年給自己買的生日禮物也是香水 哈哈哈"
@@ -225,7 +224,7 @@ const QUIZ_QUESTIONS = [
   {
     id: "q14",
     category: "價值觀",
-    title: "你對女性困境的理解？",
+    title: "你對女性困境有了解嗎？",
     desc: "",
     options: [
       { text: "有稍微了解" },
@@ -233,8 +232,8 @@ const QUIZ_QUESTIONS = [
       { text: "認為現在女性比較吃香" },
       { text: "女權自助餐" }
     ],
-    myAnswerText: "如果你不覺得現今女性在社會上還是相對比較弱勢，以及擁有很多女性困境的狀況，那❌",
-    myAnswerNote: ""
+    myAnswerText: "一些價值觀～",
+    myAnswerNote: "我其實很不喜歡聽到有人在話語中，無意識地帶入一些辱女詞彙～\n如果你不覺得現今女性在社會上還是相對比較弱勢，也還有很多女性困境，那請❌"
   },
   {
     id: "q15",
