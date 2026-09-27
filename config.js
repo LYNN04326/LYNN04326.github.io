@@ -55,12 +55,12 @@ const QUIZ_QUESTIONS = [
     desc: "",
     options: [
       { text: "行程排滿滿" },
-      { text: "睡到自然醒再出門亂晃" },
+      { text: "隨興走走，不排行程" },
       { text: "跟團最輕鬆" },
       { text: "不太愛出門" }
     ],
-    myAnswerText: "想去的地方很多，行程隨興就好",
-    myAnswerNote: "最喜歡在路上亂逛時發現的小店，比排好的景點還好玩。"
+    myAnswerText: "隨興走走，不排行程",
+    myAnswerNote: "想去的地方很多！最喜歡在路上亂逛時發現的小店，比排好的景點還好玩。"
   },
   {
     id: "q3",
@@ -112,29 +112,29 @@ const QUIZ_QUESTIONS = [
     title: "你喜歡看什麼風格的影集？",
     desc: "",
     options: [
-      { text: "犯罪懸疑" },
+      { text: "警探、軍人類單元劇" },
       { text: "喜劇、情境喜劇" },
       { text: "奇幻科幻" },
       { text: "愛情劇" },
       { text: "醫療、律政" },
       { text: "不太看影集" }
     ],
-    myAnswerText: "最近完全陷入美國影集",
-    myAnswerNote: "一集接一集根本停不下來，有好看的劇歡迎推坑給我！"
+    myAnswerText: "警探、軍人類單元劇",
+    myAnswerNote: "最近完全陷入美國影集，一集一個案子根本停不下來，有好看的歡迎推坑給我！"
   },
   {
     id: "q7",
-    category: "個性",
-    title: "你是 I 人還是 E 人？",
-    desc: "不信 MBTI 也可以選",
+    category: "朋友相處",
+    title: "跟朋友在一起的時候，你通常是？",
+    desc: "",
     options: [
-      { text: "I 人，需要自己的時間充電" },
-      { text: "E 人，跟人相處就是充電" },
-      { text: "看場合切換" },
-      { text: "不信這個" }
+      { text: "負責炒熱氣氛的人" },
+      { text: "安靜聽大家說話的人" },
+      { text: "負責揪團的人" },
+      { text: "看場合切換" }
     ],
-    myAnswerText: "E 人（ENFP）",
-    myAnswerNote: "話很多，但也很喜歡聽別人說話，聊到喜歡的話題會停不下來。"
+    myAnswerText: "負責炒熱氣氛的人",
+    myAnswerNote: "話很多，聊到喜歡的話題會停不下來，但也很喜歡聽朋友說話。"
   },
   {
     id: "q8",
@@ -147,8 +147,8 @@ const QUIZ_QUESTIONS = [
       { text: "沐浴乳" },
       { text: "不知道欸" }
     ],
-    myAnswerText: "洗衣精的味道最讚",
-    myAnswerNote: "乾淨的味道真的會加分，這是我的秘密條件之一（x）"
+    myAnswerText: "香水",
+    myAnswerNote: "我是香水控！根據天氣跟心情也會有不同選擇～"
   },
   {
     id: "q9",
@@ -176,7 +176,7 @@ const QUIZ_QUESTIONS = [
       { text: "吃好吃的" }
     ],
     myAnswerText: "找人聊聊",
-    myAnswerNote: "我是會想說出來的類型，說完就好一大半。反過來也一樣，很願意當你的樹洞。"
+    myAnswerNote: "我是會想說出來的類型，說完就好一大半，而且需要感受到朋友的理解或安慰哈哈哈"
   },
   {
     id: "q11",
@@ -189,13 +189,13 @@ const QUIZ_QUESTIONS = [
       { text: "不想講就先不講" },
       { text: "其他(願意的話可以跟我說)" }
     ],
-    myAnswerText: "可以先冷靜，但一定要回來談",
-    myAnswerNote: "最怕冷戰跟突然疏遠。需要時間可以，說一聲「我想一下，晚點聊」就好。"
+    myAnswerText: "先冷靜一下再回來談",
+    myAnswerNote: "我可以等你冷靜，但不要冷戰或直接消失啦，講開就沒事了"
   },
   {
     id: "q12",
     category: "金錢觀",
-    title: "跟朋友出去吃飯，你習慣？",
+    title: "跟伴侶出去吃飯，你習慣？",
     desc: "",
     options: [
       { text: "各付各的" },
@@ -203,37 +203,36 @@ const QUIZ_QUESTIONS = [
       { text: "我來請" },
       { text: "看情況" }
     ],
-    myAnswerText: "看情況，不要太計較",
+    myAnswerText: "看情況",
     myAnswerNote: "在意的不是誰付多少，而是彼此都願意付出。不亂花錢，也不斤斤計較。"
   },
   {
     id: "q13",
     category: "政治傾向",
     title: "請 pick 你的政治傾向",
-    desc: "放在第 13 題剛剛好",
+    desc: "",
     options: [
-      { text: "台灣就是台灣" },
       { text: "國民黨" },
       { text: "民進黨" },
       { text: "民眾黨" },
       { text: "我沒有很關心政治" }
     ],
-    myAnswerText: "台灣就是台灣",
-    myAnswerNote: "立場不用一模一樣，但核心價值要相近，這題對我來說蠻重要的。"
+    myAnswerText: "國民黨、民眾黨以外都可以聊",
+    myAnswerNote: "因為我在意國家主權"
   },
   {
     id: "q14",
     category: "價值觀",
-    title: "你怎麼看性別平等？",
-    desc: "沒有想過也很正常！",
+    title: "你對女性困境的理解？",
+    desc: "",
     options: [
-      { text: "認同，也會做到" },
-      { text: "認同，但有些事還是男生該做" },
-      { text: "覺得現在女生比較吃香" },
-      { text: "沒想過" }
+      { text: "有稍微了解" },
+      { text: "不了解" },
+      { text: "認為現在女性比較吃香" },
+      { text: "女權自助餐" }
     ],
-    myAnswerText: "希望大家都是平等的",
-    myAnswerNote: "不需要誰讓誰，也不需要誰管誰，一起討論、一起做決定就好。"
+    myAnswerText: "如果你不覺得現今女性在社會上還是相對比較弱勢，以及擁有很多女性困境的狀況，那❌",
+    myAnswerNote: ""
   },
   {
     id: "q15",

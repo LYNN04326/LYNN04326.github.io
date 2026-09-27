@@ -70,6 +70,7 @@ function handleOptionSelect(optIndex) {
   document.getElementById('user-choice-text').innerText = chosen.text;
   document.getElementById('my-choice-text').innerText = q.myAnswerText;
   document.getElementById('my-choice-note').innerText = q.myAnswerNote;
+  document.getElementById('my-choice-note').classList.toggle('hidden', !q.myAnswerNote);
 
   const isLast = (currentIndex === QUIZ_QUESTIONS.length - 1);
   document.getElementById('next-step-btn-text').innerText = isLast ? "完成作答！" : "下一題";
