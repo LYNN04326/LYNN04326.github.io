@@ -51,34 +51,64 @@ const QUIZ_QUESTIONS = [
   },
   {
     id: "q2",
-    category: "旅行風格",
-    title: "你的旅行風格是？",
+    category: "音樂喜好",
+    title: "以下哪個樂團你最常聽？",
     desc: "",
     options: [
-      { text: "行程排滿滿" },
-      { text: "隨興走走，不排行程" },
-      { text: "跟團最輕鬆" },
-      { text: "不太愛出門" }
+      { text: "南西肯恩" },
+      { text: "滅火器" },
+      { text: "血肉果汁機" },
+      { text: "溫蒂漫步" },
+      { text: "都喜歡，看心情選" },
+      { text: "其他（我想知道！）" }
     ],
-    myAnswerText: "隨興走走，不排行程",
-    myAnswerNote: "想去的地方很多！最喜歡在路上亂逛時發現的小店，比排好的景點還好玩～"
+    myAnswerText: "都喜歡，看心情選",
+    myAnswerNote: "不同心情會選不同的歌～\n曾經有一陣子很低潮的時候，會戴耳機聽血肉果汁機做瑜珈😎\n從小對流行歌手就比較無感，長大後才發現，我就是聽獨立音樂的料，哈"
   },
   {
     id: "q3",
     category: "通勤日常",
-    title: "通勤的時候你都在做什麼？",
+    title: "通勤的時候你都在聽什麼？",
     desc: "",
     options: [
-      { text: "聽音樂" },
-      { text: "聽 Podcast" },
-      { text: "滑手機看影片" },
-      { text: "放空發呆" }
+      { text: "音樂" },
+      { text: "Podcast" },
+      { text: "看影片" },
+      { text: "什麼都不聽，放空" }
     ],
-    myAnswerText: "聽 Podcast",
-    myAnswerNote: "聽有趣的內容可以暖機我的腦袋😇"
+    myAnswerText: "Podcast",
+    myAnswerNote: "最常聽呱吉的新資料夾～聽有趣的內容可以暖機我的腦袋😇"
   },
   {
     id: "q4",
+    category: "影集喜好",
+    title: "你比較喜歡哪種類型的影集？",
+    desc: "",
+    options: [
+      { text: "肥皂劇" },
+      { text: "喜劇" },
+      { text: "科幻" },
+      { text: "動作" }
+    ],
+    myAnswerText: "喜劇跟動作都愛",
+    myAnswerNote: "曾經有一段時間沉迷於 Friends 跟良善之地～\n因為喜歡團隊合作的感覺，最近迷上軍警、警探類：正在看 SEAL Team，以前印象最深刻的是醉爆特攻隊～"
+  },
+  {
+    id: "q5",
+    category: "政治傾向",
+    title: "請 pick 你的政治傾向",
+    desc: "",
+    options: [
+      { text: "國民黨" },
+      { text: "民進黨" },
+      { text: "民眾黨" },
+      { text: "我沒有很關心政治" }
+    ],
+    myAnswerText: "民進黨",
+    myAnswerNote: "因為我在意國家主權，也很關注性別議題，所以這是綜合下來的選擇～"
+  },
+  {
+    id: "q6",
     category: "週末",
     title: "週末你比較常？",
     desc: "",
@@ -93,80 +123,22 @@ const QUIZ_QUESTIONS = [
     myAnswerNote: "出門是充電，在家耍廢也是充電，兩種都需要～\n不過週日基本上不出門，因為需要躺在家一整天備戰 Blue Monday ʕథ౪థʔ"
   },
   {
-    id: "q5",
-    category: "音樂喜好",
-    title: "你平常都聽什麼類型的音樂？",
-    desc: "",
-    options: [
-      { text: "獨立音樂" },
-      { text: "流行樂" },
-      { text: "嘻哈饒舌" },
-      { text: "搖滾" },
-      { text: "什麼都聽" }
-    ],
-    myAnswerText: "獨立音樂",
-    myAnswerNote: "從小對流行歌手就比較無感，長大後才發現，我就是聽獨立音樂的料，哈"
-  },
-  {
-    id: "q6",
-    category: "影集喜好",
-    title: "你喜歡看什麼風格的影集？",
-    desc: "",
-    options: [
-      { text: "警探、軍人類單元劇" },
-      { text: "喜劇、情境喜劇" },
-      { text: "奇幻科幻" },
-      { text: "愛情劇" },
-      { text: "醫療、律政" },
-      { text: "不太看影集" }
-    ],
-    myAnswerText: "警探、軍人類單元劇",
-    myAnswerNote: "最近完全陷入美國影集，一集一個案子根本停不下來，有好看的歡迎推坑給我！"
-  },
-  {
     id: "q7",
-    category: "朋友相處",
-    title: "跟朋友在一起的時候，你通常是？",
+    category: "香味",
+    title: "你喜歡哪種香味？",
     desc: "",
     options: [
-      { text: "負責炒熱氣氛的人" },
-      { text: "安靜聽大家說話的人" },
-      { text: "負責揪團的人" },
-      { text: "看場合切換" }
+      { text: "花果香" },
+      { text: "木質調" },
+      { text: "柑橘調" },
+      { text: "乾淨的皂感" },
+      { text: "我不擦香水" }
     ],
-    myAnswerText: "負責揪團的人",
-    myAnswerNote: "我的朋友們都不太主動 哈 所以我每次揪團還會附贈挑餐廳服務( っ ⸝⸝⸝◜~◝⸝⸝⸝ c)"
+    myAnswerText: "花果香",
+    myAnswerNote: "我是香水控！根據天氣跟心情會有不同選擇～\n尤其喜歡玫瑰🌹幾乎每瓶香水都帶點玫瑰，今年給自己買的生日禮物也是香水 哈哈哈"
   },
   {
     id: "q8",
-    category: "小秘密",
-    title: "你身上通常是什麼味道？",
-    desc: "",
-    options: [
-      { text: "洗衣精" },
-      { text: "香水" },
-      { text: "沐浴乳" },
-      { text: "不知道欸" }
-    ],
-    myAnswerText: "香水",
-    myAnswerNote: "我是香水控！根據天氣跟心情也會有不同選擇～"
-  },
-  {
-    id: "q9",
-    category: "分享習慣",
-    title: "看到好笑的迷因或影片，你會？",
-    desc: "",
-    options: [
-      { text: "馬上傳給想分享的人" },
-      { text: "自己笑完就好" },
-      { text: "存起來之後再看" },
-      { text: "轉發到限動" }
-    ],
-    myAnswerText: "馬上傳給想分享的人",
-    myAnswerNote: "好笑的東西一個人笑太可惜了！分享生活的大小事對我來說很重要～"
-  },
-  {
-    id: "q10",
     category: "情緒",
     title: "心情不好的時候，你通常會？",
     desc: "",
@@ -180,7 +152,50 @@ const QUIZ_QUESTIONS = [
     myAnswerNote: "我是會想說出來的類型，說完就好一大半，而且需要感受到朋友的理解或安慰哈哈哈"
   },
   {
+    id: "q9",
+    category: "旅行",
+    title: "如果能馬上出發，你最想去哪？",
+    desc: "",
+    options: [
+      { text: "日本" },
+      { text: "濟州島" },
+      { text: "東南亞海島" },
+      { text: "歐洲" },
+      { text: "其他（可以跟我說！）" }
+    ],
+    myAnswerText: "濟州島",
+    myAnswerNote: "目前去過最喜歡的地方！那邊的步調很慢很放鬆，一眼望出去都是海，東西也好吃～"
+  },
+  {
+    id: "q10",
+    category: "咖啡廳",
+    title: "你喜歡去咖啡廳嗎？",
+    desc: "",
+    options: [
+      { text: "超喜歡，會特地找" },
+      { text: "偶爾，有需要才去" },
+      { text: "比較喜歡待在家" },
+      { text: "咖啡廳是拿來工作的地方" }
+    ],
+    myAnswerText: "超喜歡，會特地找",
+    myAnswerNote: "也想聽聽你的愛店～有推薦的話一定要跟我說！"
+  },
+  {
     id: "q11",
+    category: "朋友相處",
+    title: "跟朋友在一起的時候，你通常是？",
+    desc: "",
+    options: [
+      { text: "負責炒熱氣氛的人" },
+      { text: "安靜聽大家說話的人" },
+      { text: "負責揪團的人" },
+      { text: "看場合切換" }
+    ],
+    myAnswerText: "負責揪團的人",
+    myAnswerNote: "我的朋友們都不太主動 哈 所以我每次揪團還會附贈挑餐廳服務( っ ⸝⸝⸝◜~◝⸝⸝⸝ c)"
+  },
+  {
+    id: "q12",
     category: "溝通",
     title: "跟別人意見不合的時候，你通常會？",
     desc: "",
@@ -188,38 +203,24 @@ const QUIZ_QUESTIONS = [
       { text: "當下說清楚" },
       { text: "先冷靜一下再回來談" },
       { text: "不想講就先不講" },
-      { text: "其他(願意的話可以跟我說)" }
+      { text: "其他（願意的話可以跟我說）" }
     ],
     myAnswerText: "先冷靜一下再回來談",
     myAnswerNote: "我可以等你冷靜，但不要冷戰或直接消失啦，講開就沒事了"
   },
   {
-    id: "q12",
-    category: "金錢觀",
-    title: "跟伴侶出去吃飯，你習慣？",
-    desc: "",
-    options: [
-      { text: "各付各的" },
-      { text: "輪流請" },
-      { text: "我來請" },
-      { text: "看情況" }
-    ],
-    myAnswerText: "看情況",
-    myAnswerNote: "在意的不是誰付多少，而是彼此都願意付出～不亂花錢，也不斤斤計較～"
-  },
-  {
     id: "q13",
-    category: "政治傾向",
-    title: "請 pick 你的政治傾向",
+    category: "分享習慣",
+    title: "看到好笑的迷因或影片，你會？",
     desc: "",
     options: [
-      { text: "國民黨" },
-      { text: "民進黨" },
-      { text: "民眾黨" },
-      { text: "我沒有很關心政治" }
+      { text: "馬上傳給想分享的人" },
+      { text: "自己笑完就好" },
+      { text: "存起來之後再看" },
+      { text: "轉發到限動" }
     ],
-    myAnswerText: "民進黨",
-    myAnswerNote: "因為我在意國家主權，也很關注性別議題，所以這是綜合下來的選擇～"
+    myAnswerText: "馬上傳給想分享的人",
+    myAnswerNote: "好笑的東西一個人笑太可惜了！分享生活的大小事對我來說很重要～"
   },
   {
     id: "q14",
@@ -237,6 +238,20 @@ const QUIZ_QUESTIONS = [
   },
   {
     id: "q15",
+    category: "金錢觀",
+    title: "跟伴侶出去吃飯，你習慣？",
+    desc: "",
+    options: [
+      { text: "各付各的" },
+      { text: "輪流請" },
+      { text: "我來請" },
+      { text: "看情況" }
+    ],
+    myAnswerText: "看情況",
+    myAnswerNote: "在意的不是誰付多少，而是彼此都願意付出～不亂花錢，也不斤斤計較～"
+  },
+  {
+    id: "q16",
     category: "加分題",
     title: "你的身高是？",
     desc: "",
@@ -250,7 +265,7 @@ const QUIZ_QUESTIONS = [
     myAnswerNote: "老實說我喜歡高高的、乾淨清爽、韓系短髮的類型……但聊得來比什麼都重要，這題可以不算分～"
   },
   {
-    id: "q16",
+    id: "q17",
     category: "最後一題",
     title: "你是怎麼點進來的？",
     desc: "",
